@@ -1,0 +1,763 @@
+/* ==========================================================================
+   Happy Paws Admin Portal - Stylesheet
+   Author: Akshat Rana (Roll No: 2545022)
+   Subject: ITWS (HTML, CSS & JavaScript)
+   ========================================================================== */
+
+:root {
+    --admin-primary: #1e3a5f;
+    --admin-accent: #2b7a78;
+    --admin-hover: #17252a;
+    --admin-bg: #f8fafc;
+    --admin-card: #ffffff;
+    --admin-border: #e2e8f0;
+    --admin-text: #1e293b;
+    --admin-muted: #64748b;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07);
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--admin-bg);
+    color: var(--admin-text);
+    line-height: 1.5;
+}
+
+.admin-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Header
+   -------------------------------------------------------------------------- */
+.admin-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--admin-border);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #17252a;
+}
+
+.admin-logo i {
+    color: #f7941d;
+    font-size: 1.5rem;
+}
+
+.admin-badge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.admin-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary-admin {
+    background-color: var(--admin-accent);
+    color: #ffffff;
+}
+
+.btn-primary-admin:hover {
+    background-color: #1f5c5a;
+}
+
+.btn-secondary-admin {
+    background-color: #f1f5f9;
+    color: var(--admin-text);
+    border: 1px solid var(--admin-border);
+}
+
+.btn-secondary-admin:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-outline-danger {
+    background-color: #ffffff;
+    color: #ef4444;
+    border: 1px solid #fecaca;
+}
+
+.btn-outline-danger:hover {
+    background-color: #fee2e2;
+}
+
+/* --------------------------------------------------------------------------
+   2. Project Credit Banner
+   -------------------------------------------------------------------------- */
+.admin-credit-banner {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    padding: 8px 0;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.admin-credit-banner strong {
+    color: #38bdf8;
+}
+
+/* --------------------------------------------------------------------------
+   3. Stats Grid
+   -------------------------------------------------------------------------- */
+.admin-main {
+    padding: 30px 0 60px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: var(--admin-card);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--admin-border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.icon-orders {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.icon-revenue {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.icon-pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.icon-delivered {
+    background-color: #f3e8ff;
+    color: #9333ea;
+}
+
+.stat-title {
+    font-size: 0.85rem;
+    color: var(--admin-muted);
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--admin-text);
+    margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Orders Management Section
+   -------------------------------------------------------------------------- */
+.orders-section-card {
+    background-color: var(--admin-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--admin-border);
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.section-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.section-heading h2 {
+    font-size: 1.3rem;
+    color: var(--admin-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-heading p {
+    font-size: 0.86rem;
+    color: var(--admin-muted);
+}
+
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--admin-border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.search-field i {
+    color: var(--admin-muted);
+}
+
+.search-field input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--admin-text);
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--admin-muted);
+}
+
+.filter-controls select {
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--admin-border);
+    outline: none;
+    font-family: inherit;
+    font-size: 0.88rem;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/* Orders Table */
+.orders-table-wrapper {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.88rem;
+}
+
+.orders-table th {
+    background-color: #f1f5f9;
+    padding: 12px 14px;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid var(--admin-border);
+    white-space: nowrap;
+}
+
+.orders-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--admin-border);
+    vertical-align: middle;
+}
+
+.orders-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.order-id-cell strong {
+    color: var(--admin-accent);
+    font-size: 0.95rem;
+    display: block;
+}
+
+.order-date-text {
+    font-size: 0.78rem;
+    color: var(--admin-muted);
+}
+
+.customer-cell strong {
+    display: block;
+    color: var(--admin-text);
+}
+
+.customer-phone {
+    font-size: 0.8rem;
+    color: var(--admin-muted);
+}
+
+.customer-address-summary {
+    font-size: 0.78rem;
+    color: #64748b;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-items-summary {
+    font-size: 0.84rem;
+    color: var(--admin-text);
+}
+
+.order-items-count-badge {
+    background-color: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.total-amount-cell {
+    font-weight: 700;
+    color: #0f766e;
+    font-size: 0.95rem;
+}
+
+.payment-badge {
+    display: inline-block;
+    background-color: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.status-dropdown {
+    padding: 5px 8px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.8rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Status Colors for Select */
+.status-dropdown.Pending {
+    background-color: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+.status-dropdown.Processing {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+.status-dropdown.Dispatched {
+    background-color: #ede9fe;
+    color: #6d28d9;
+    border-color: #ddd6fe;
+}
+.status-dropdown.Delivered {
+    background-color: #dcfce7;
+    color: #15803d;
+    border-color: #bbf7d0;
+}
+.status-dropdown.Cancelled {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon-sm {
+    background: none;
+    border: 1px solid var(--admin-border);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.btn-icon-sm:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-delete-sm {
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+.btn-delete-sm:hover {
+    background-color: #fee2e2;
+}
+
+/* Empty State */
+.empty-orders-view {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--admin-muted);
+}
+
+.empty-orders-view i {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+}
+
+.empty-orders-view h3 {
+    color: var(--admin-text);
+    margin-bottom: 6px;
+}
+
+.empty-orders-view p {
+    max-width: 480px;
+    margin: 0 auto 20px;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Inventory Quick Grid
+   -------------------------------------------------------------------------- */
+.inventory-section-card {
+    background-color: var(--admin-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--admin-border);
+    padding: 24px;
+}
+
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.inventory-header h3 {
+    font-size: 1.15rem;
+    color: var(--admin-text);
+}
+
+.inventory-header p {
+    font-size: 0.82rem;
+    color: var(--admin-muted);
+}
+
+.inventory-badge {
+    background-color: #e6f4f1;
+    color: #2b7a78;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+.inventory-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.mini-product-card {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--radius-sm);
+    background-color: #f8fafc;
+    align-items: center;
+}
+
+.mini-product-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.mini-product-info h5 {
+    font-size: 0.82rem;
+    color: var(--admin-text);
+    line-height: 1.25;
+    margin-bottom: 2px;
+}
+
+.mini-product-info span {
+    font-size: 0.75rem;
+    color: var(--admin-muted);
+}
+
+.mini-product-price {
+    font-weight: 700;
+    color: #2b7a78;
+    margin-left: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Order Details / Invoice Modal
+   -------------------------------------------------------------------------- */
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    padding: 20px;
+}
+
+.admin-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.admin-modal-card {
+    background-color: #ffffff;
+    max-width: 620px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-card-header {
+    background-color: #f8fafc;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-card-header h3 {
+    font-size: 1.2rem;
+    color: var(--admin-text);
+}
+
+.modal-order-tag {
+    font-size: 0.85rem;
+    color: var(--admin-accent);
+    font-weight: 700;
+}
+
+.modal-close-icon {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--admin-muted);
+    cursor: pointer;
+}
+
+.modal-card-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.invoice-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.invoice-box {
+    background-color: #f8fafc;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--admin-border);
+    font-size: 0.86rem;
+}
+
+.invoice-box h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--admin-text);
+    border-bottom: 1px solid var(--admin-border);
+    padding-bottom: 4px;
+}
+
+.invoice-box p {
+    margin-bottom: 4px;
+    color: #475569;
+}
+
+.invoice-box strong {
+    color: var(--admin-text);
+}
+
+.items-heading {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: var(--admin-text);
+}
+
+.modal-items-list {
+    border: 1px solid var(--admin-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.modal-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--admin-border);
+    font-size: 0.86rem;
+}
+
+.modal-item-row:last-child {
+    border-bottom: none;
+}
+
+.modal-item-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-item-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.modal-totals-box {
+    background-color: #f1f5f9;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    color: #64748b;
+}
+
+.total-line.grand-total {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--admin-border);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--admin-text);
+}
+
+.modal-card-footer {
+    background-color: #f8fafc;
+    padding: 14px 24px;
+    border-top: 1px solid var(--admin-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .admin-modal-card,
+    .admin-modal-card * {
+        visibility: visible;
+    }
+    .admin-modal-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+    .modal-card-footer,
+    .modal-close-icon {
+        display: none;
+    }
+}

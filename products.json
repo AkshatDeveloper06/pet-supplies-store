@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Pedigree Adult Dry Dog Food (Chicken & Veg, 3kg)",
+    "category": "Pet Food",
+    "price": 649,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=500&auto=format&fit=crop&q=60",
+    "description": "Balanced dry kibble rich in protein and vitamins for active adult dogs."
+  },
+  {
+    "id": 2,
+    "name": "Whiskas Wet Cat Food (Ocean Fish Gravy, 12 Packs)",
+    "category": "Pet Food",
+    "price": 480,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=500&auto=format&fit=crop&q=60",
+    "description": "Tasty tender fish pouches enriched with zinc and essential fatty acids."
+  },
+  {
+    "id": 3,
+    "name": "Durable Rubber Dog Chew Bone",
+    "category": "Toys",
+    "price": 299,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=500&auto=format&fit=crop&q=60",
+    "description": "Tough non-toxic natural rubber toy to keep dogs engaged and clean teeth."
+  },
+  {
+    "id": 4,
+    "name": "Interactive Feather Cat Wand Toy",
+    "category": "Toys",
+    "price": 199,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=500&auto=format&fit=crop&q=60",
+    "description": "Flexible wand with colorful bells and feathers to encourage indoor exercise."
+  },
+  {
+    "id": 5,
+    "name": "Self-Cleaning Pet Slicker Grooming Brush",
+    "category": "Grooming",
+    "price": 349,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=500&auto=format&fit=crop&q=60",
+    "description": "Gently removes loose fur and mats with a convenient one-click hair release."
+  },
+  {
+    "id": 6,
+    "name": "Natural Oatmeal Anti-Itch Pet Shampoo (250ml)",
+    "category": "Grooming",
+    "price": 389,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1535294435445-d7249524ef2e?w=500&auto=format&fit=crop&q=60",
+    "description": "Mild herbal formula with aloe vera for dry, sensitive and allergic coats."
+  },
+  {
+    "id": 7,
+    "name": "Reflective Nylon Dog Collar & Leash Set",
+    "category": "Accessories",
+    "price": 549,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500&auto=format&fit=crop&q=60",
+    "description": "Padded grip leash and collar with bright reflective stitching for night walks."
+  },
+  {
+    "id": 8,
+    "name": "Ultra-Soft Orthopedic Pet Bed (Medium)",
+    "category": "Accessories",
+    "price": 1199,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?w=500&auto=format&fit=crop&q=60",
+    "description": "Comfortable cushioned sleeping bed with a removable, washable outer cover."
+  },
+  {
+    "id": 9,
+    "name": "Stainless Steel Non-Skid Pet Feeding Bowl",
+    "category": "Accessories",
+    "price": 249,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1608096299210-db7e38487075?w=500&auto=format&fit=crop&q=60",
+    "description": "Durable food-grade steel bowl with a silicone rubber base to prevent slipping."
+  },
+  {
+    "id": 10,
+    "name": "Bentonite Clumping Cat Litter (5kg Lavender)",
+    "category": "Care Products",
+    "price": 429,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500&auto=format&fit=crop&q=60",
+    "description": "Fast-acting clumping litter with 99% dust-free granules and odor control."
+  },
+  {
+    "id": 11,
+    "name": "Biodegradable Pet Waste Bags (8 Rolls + Dispenser)",
+    "category": "Care Products",
+    "price": 220,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?w=500&auto=format&fit=crop&q=60",
+    "description": "Eco-friendly leak-proof poop bags with a clip-on dispenser for walks."
+  },
+  {
+    "id": 12,
+    "name": "Daily Calcium & Multi-Vitamin Pet Chews (60 Tabs)",
+    "category": "Care Products",
+    "price": 399,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&auto=format&fit=crop&q=60",
+    "description": "Flavored chewable tablets supporting strong bones, joints and shiny fur."
+  }
+]

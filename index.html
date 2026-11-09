@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws | Pet Supplies Store - ITWS Project</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <p>🐾 Free Delivery on orders above ₹499 | Call Us: +91 98765-43210</p>
+            <a href="admin.html" class="top-bar-admin"><i class="fa-solid fa-user-gear"></i> Admin Portal</a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-paw logo-icon"></i>
+                <span>Happy<strong>Paws</strong></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="admin.html" class="nav-link admin-nav-tag"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+            </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="nav-actions">
+                <button class="cart-btn" id="openCartBtn" aria-label="Open Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-text">Cart</span>
+                    <span class="cart-count" id="cartCountBadge">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Welcome Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🐶 Quality Pet Care Supplies</span>
+                <h1>Everything Your Pet Needs, All in One Place</h1>
+                <p>From nutritious food and playful toys to grooming essentials and comfortable accessories. Give your furry friends the love and care they deserve.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                    <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-shield-dog"></i>
+                        <span>100% Pet-Safe</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Easy Returns</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=700&auto=format&fit=crop&q=80" alt="Happy dog with pet accessories" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Quickly find what your pet is looking for</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card active" data-category="all">
+                    <div class="category-icon"><i class="fa-solid fa-border-all"></i></div>
+                    <h3>All Items</h3>
+                    <span>View everything</span>
+                </div>
+                <div class="category-card" data-category="Pet Food">
+                    <div class="category-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                    <h3>Pet Food</h3>
+                    <span>Dry & wet meals, treats</span>
+                </div>
+                <div class="category-card" data-category="Toys">
+                    <div class="category-icon"><i class="fa-solid fa-baseball"></i></div>
+                    <h3>Toys</h3>
+                    <span>Chew bones, balls & wands</span>
+                </div>
+                <div class="category-card" data-category="Grooming">
+                    <div class="category-icon"><i class="fa-solid fa-soap"></i></div>
+                    <h3>Grooming</h3>
+                    <span>Brushes, shampoos & care</span>
+                </div>
+                <div class="category-card" data-category="Accessories">
+                    <div class="category-icon"><i class="fa-solid fa-vest"></i></div>
+                    <h3>Accessories</h3>
+                    <span>Collars, leashes & beds</span>
+                </div>
+                <div class="category-card" data-category="Care Products">
+                    <div class="category-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Care Products</h3>
+                    <span>Litter, waste bags & supplements</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Pet Supplies</h2>
+                <p>Carefully selected items for dogs, cats and puppies</p>
+            </div>
+
+            <!-- Controls: Search bar & Sort filter -->
+            <div class="products-filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search by name, food, chew toy, shampoo..." autocomplete="off">
+                    <button id="clearSearchBtn" class="clear-btn" title="Clear search"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <div class="sort-box">
+                    <label for="sortSelect"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active category indicator & count -->
+            <div class="products-meta">
+                <span id="resultsCount">Showing 12 products</span>
+                <span id="activeFilterTag" class="active-tag">All Categories</span>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Injected dynamically via script.js -->
+            </div>
+
+            <!-- Empty State when no match -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No pet supplies found</h3>
+                <p>We couldn't find any products matching your search or selected category. Try searching for something else!</p>
+                <button class="btn btn-primary" id="resetFiltersBtn">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="sub-title">About Happy Paws</span>
+                    <h2>We Treat Your Pets Like Family</h2>
+                    <p>Happy Paws was created with one simple mission: to make everyday pet parenting effortless and joyful. We know that pets bring unconditional happiness into our homes, which is why we offer trusted nutrition, safe chew toys, gentle grooming solutions, and comfortable accessories.</p>
+                    <p>Whether you have an energetic puppy or a calm senior cat, our store provides verified supplies at reasonable prices.</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-box">
+                            <h4>🐶 100% Genuine</h4>
+                            <p>Authentic pet food and safe tested toys from reliable suppliers.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>🚚 Quick Dispatch</h4>
+                            <p>Carefully packed orders dispatched with tracking support.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>💬 Friendly Advice</h4>
+                            <p>Helpful recommendations for new pet owners and puppy parents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=700&auto=format&fit=crop&q=80" alt="Cute kitten and dog playing" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Store Information Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Visit or Contact Us</h2>
+                <p>Have questions about sizes, ingredients or delivery? Reach out anytime!</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Store Info Card -->
+                <div class="contact-info">
+                    <h3>Store Information</h3>
+                    <p class="contact-lead">Drop by our local outlet or contact our customer support desk.</p>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Store Address:</strong>
+                            <p>PCTE Campus Road, Near Ferozepur Road, Ludhiana, Punjab - 142021</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Phone Number:</strong>
+                            <p>+91 98765-43210 / 0161-2804000</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Email Address:</strong>
+                            <p>support@happypawsstore.in</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Working Hours:</strong>
+                            <p>Monday - Saturday: 9:00 AM - 8:30 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="e.g. rahul@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPet">Pet Type</label>
+                            <select id="contactPet">
+                                <option value="dog">Dog / Puppy</option>
+                                <option value="cat">Cat / Kitten</option>
+                                <option value="bird">Bird / Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMsg">Message / Query</label>
+                            <textarea id="contactMsg" rows="4" placeholder="Ask about product availability, diet recommendations, or delivery..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                    <div id="contactSuccessMsg" class="form-success-alert" style="display: none;">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Thank you! Your message has been received. We will get back to you shortly.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div class="cart-header-title">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <h3>Shopping Cart</h3>
+                <span class="cart-items-tag" id="drawerCartCount">0 items</span>
+            </div>
+            <button class="close-cart-btn" id="closeCartBtn" aria-label="Close cart">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Injected by script.js -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary-row">
+                <span>Subtotal:</span>
+                <span class="summary-val" id="cartSubtotal">₹0</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Delivery:</span>
+                <span class="summary-val" id="cartDelivery">₹0</span>
+            </div>
+            <div class="cart-summary-row total-row">
+                <span>Total Amount:</span>
+                <span class="summary-val" id="cartTotal">₹0</span>
+            </div>
+            <p class="delivery-hint" id="deliveryHint">Add items worth ₹499 for Free Delivery!</p>
+            <button class="btn btn-primary btn-block checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-outline btn-block clear-cart-btn" id="clearCartBtn">Clear Cart</button>
+        </div>
+    </aside>
+
+    <!-- Delivery Details Modal -->
+    <div class="modal-overlay" id="deliveryModal">
+        <div class="modal-content delivery-modal-content">
+            <div class="modal-header-row">
+                <div class="modal-title-wrap">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Delivery Details</h3>
+                </div>
+                <button class="close-modal-btn" id="closeDeliveryModalBtn" aria-label="Close delivery modal">&times;</button>
+            </div>
+            <p class="modal-subtitle">Please enter your delivery address to place your pet supplies order.</p>
+
+            <form id="deliveryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custName">Full Name *</label>
+                        <input type="text" id="custName" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custPhone">Phone Number *</label>
+                        <input type="tel" id="custPhone" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="custAddress">Street / House Address *</label>
+                    <input type="text" id="custAddress" placeholder="e.g. #241, Urban Estate Phase 2" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custCity">City *</label>
+                        <input type="text" id="custCity" placeholder="e.g. Ludhiana" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custPincode">Pincode *</label>
+                        <input type="text" id="custPincode" placeholder="e.g. 141002" pattern="[0-9]{6}" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="custNotes">Delivery Notes (Optional)</label>
+                    <input type="text" id="custNotes" placeholder="e.g. Ring bell, deliver in evening">
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="Cash on Delivery" checked>
+                            <span><i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="UPI / QR (Demo)">
+                            <span><i class="fa-solid fa-qrcode"></i> UPI / QR Code (Demo)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="order-preview-bar">
+                    <div class="preview-item">
+                        <span>Items:</span>
+                        <strong id="deliveryModalItemCount">0</strong>
+                    </div>
+                    <div class="preview-item">
+                        <span>Payable Amount:</span>
+                        <strong class="highlight-total" id="deliveryModalTotal">₹0</strong>
+                    </div>
+                </div>
+
+                <div class="modal-actions-row">
+                    <button type="button" class="btn btn-outline" id="cancelDeliveryBtn">Back to Cart</button>
+                    <button type="submit" class="btn btn-primary" id="confirmOrderBtn">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Checkout / Demo Order Success Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Order Placed Successfully!</h2>
+            <p class="order-id">Order ID: <strong id="modalOrderId">#HP-89421</strong></p>
+            <p class="modal-msg">Thank you for ordering with Happy Paws! Your order has been recorded in the system.</p>
+            
+            <div class="order-summary-box">
+                <div class="order-detail-row">
+                    <span>Customer Name:</span>
+                    <strong id="modalCustName">-</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Delivery To:</span>
+                    <strong id="modalCustAddress">-</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Contact Phone:</span>
+                    <strong id="modalCustPhone">-</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Items Count:</span>
+                    <strong id="modalItemCount">0</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Total Amount Paid:</span>
+                    <strong id="modalTotalPaid">₹0</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Payment Method:</span>
+                    <strong id="modalPayMethod">Cash on Delivery</strong>
+                </div>
+                <div class="order-detail-row">
+                    <span>Status:</span>
+                    <strong class="status-badge-pending">Pending Dispatch</strong>
+                </div>
+            </div>
+
+            <div class="modal-buttons-grid">
+                <button class="btn btn-primary btn-block" id="modalCloseBtn">Continue Shopping</button>
+                <a href="admin.html" class="btn btn-secondary btn-block"><i class="fa-solid fa-user-shield"></i> View in Admin Panel</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Academic Project Credit Banner -->
+    <div class="project-credit-bar">
+        <div class="section-container credit-inner">
+            <p><strong>ITWS Project:</strong> Pet Supplies Store Website | <strong>Student:</strong> Akshat Rana (Univ. Roll No: 2545022) | <strong>Institute:</strong> PCTE Institute of Engineering & Technology, Ludhiana | <strong>Course:</strong> B.Tech CSE (3rd Semester)</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#home" class="logo footer-logo">
+                    <i class="fa-solid fa-paw"></i>
+                    <span>Happy<strong>Paws</strong></span>
+                </a>
+                <p>Your friendly pet supplies store dedicated to quality food, joyful toys, safe grooming, and comfort accessories.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#products">All Products</a></li>
+                    <li><a href="#about">About Our Store</a></li>
+                    <li><a href="#contact">Contact & Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product Categories</h4>
+                <ul>
+                    <li><a href="#products" class="footer-cat-link" data-category="Pet Food">Pet Food</a></li>
+                    <li><a href="#products" class="footer-cat-link" data-category="Toys">Toys & Chews</a></li>
+                    <li><a href="#products" class="footer-cat-link" data-category="Grooming">Grooming & Shampoos</a></li>
+                    <li><a href="#products" class="footer-cat-link" data-category="Accessories">Collars & Beds</a></li>
+                    <li><a href="#products" class="footer-cat-link" data-category="Care Products">Care & Litter</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Project Information</h4>
+                <p><strong>Topic:</strong> Pet Supplies Store</p>
+                <p><strong>Tech Stack:</strong> HTML5, CSS3, JavaScript</p>
+                <p><strong>Submitted by:</strong> Akshat Rana</p>
+                <p><strong>Roll No:</strong> 2545022</p>
+                <p style="margin-top: 10px;"><a href="admin.html" style="color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-user-shield"></i> Open Admin Portal &rarr;</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="section-container">
+                <p>&copy; 2026 Happy Paws Pet Store. Created for ITWS Academic Submission.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

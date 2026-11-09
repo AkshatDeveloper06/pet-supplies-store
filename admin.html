@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Happy Paws Store - ITWS Project</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Top Admin Header -->
+    <header class="admin-header">
+        <div class="admin-container header-inner">
+            <div class="admin-brand">
+                <a href="index.html" class="admin-logo">
+                    <i class="fa-solid fa-paw"></i>
+                    <span>Happy<strong>Paws</strong></span>
+                </a>
+                <span class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin Portal</span>
+            </div>
+            
+            <div class="admin-nav-actions">
+                <a href="index.html" class="btn btn-secondary-admin">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Store
+                </a>
+                <button class="btn btn-primary-admin" id="addSampleOrdersBtn">
+                    <i class="fa-solid fa-plus-circle"></i> Load Sample Orders
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Credit Banner -->
+    <div class="admin-credit-banner">
+        <div class="admin-container">
+            <p><strong>ITWS Project Administration:</strong> Akshat Rana | Roll No: <strong>2545022</strong> | Sem 3 B.Tech CSE | PCTE Ludhiana</p>
+        </div>
+    </div>
+
+    <!-- Main Admin Content -->
+    <main class="admin-main">
+        <div class="admin-container">
+            
+            <!-- Dashboard Metrics Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon icon-orders">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-title">Total Orders</span>
+                        <h3 class="stat-value" id="statTotalOrders">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon icon-revenue">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-title">Total Revenue</span>
+                        <h3 class="stat-value" id="statTotalRevenue">₹0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon icon-pending">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-title">Pending Orders</span>
+                        <h3 class="stat-value" id="statPendingOrders">0</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon icon-delivered">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-title">Delivered Orders</span>
+                        <h3 class="stat-value" id="statDeliveredOrders">0</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Management Card -->
+            <section class="orders-section-card">
+                <div class="section-top-bar">
+                    <div class="section-heading">
+                        <h2><i class="fa-solid fa-list-check"></i> Customer Orders Management</h2>
+                        <p>View customer delivery details, track items, and update order statuses.</p>
+                    </div>
+
+                    <div class="header-tools">
+                        <button class="btn btn-outline-danger" id="clearAllOrdersBtn">
+                            <i class="fa-solid fa-trash-can"></i> Clear All Orders
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters & Search Toolbar -->
+                <div class="table-toolbar">
+                    <div class="search-field">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="orderSearchInput" placeholder="Search by Order ID, customer name, phone, or city...">
+                    </div>
+
+                    <div class="filter-controls">
+                        <label for="statusFilter"><i class="fa-solid fa-filter"></i> Status:</label>
+                        <select id="statusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Processing">Processing</option>
+                            <option value="Dispatched">Dispatched</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Orders Table Container -->
+                <div class="orders-table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID & Date</th>
+                                <th>Customer & Delivery Address</th>
+                                <th>Items Ordered</th>
+                                <th>Total (₹)</th>
+                                <th>Payment</th>
+                                <th>Order Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Populated dynamically by admin.js -->
+                        </tbody>
+                    </table>
+
+                    <!-- Empty Orders State -->
+                    <div class="empty-orders-view" id="emptyOrdersView" style="display: none;">
+                        <i class="fa-solid fa-box-open"></i>
+                        <h3>No Orders Found</h3>
+                        <p id="emptyMsgText">No customer orders have been placed yet. Go to the store, add supplies to the cart and checkout, or click "Load Sample Orders" to test.</p>
+                        <button class="btn btn-primary-admin" id="emptyLoadSampleBtn">
+                            <i class="fa-solid fa-plus-circle"></i> Load Sample Demo Orders
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Store Inventory / Products Quick View -->
+            <section class="inventory-section-card">
+                <div class="inventory-header">
+                    <div>
+                        <h3><i class="fa-solid fa-layer-group"></i> Active Store Catalog (From products.json)</h3>
+                        <p>Currently active product items loaded dynamically from <code>products.json</code></p>
+                    </div>
+                    <span class="inventory-badge" id="inventoryCountBadge">12 Products</span>
+                </div>
+                <div class="inventory-mini-grid" id="inventoryMiniGrid">
+                    <!-- Populated dynamically via admin.js -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Order Details / Invoice Modal -->
+    <div class="admin-modal-overlay" id="orderDetailModal">
+        <div class="admin-modal-card">
+            <div class="modal-card-header">
+                <div>
+                    <h3>Order Invoice & Details</h3>
+                    <span class="modal-order-tag" id="modalDetailOrderId">#HP-00000</span>
+                </div>
+                <button class="modal-close-icon" id="closeDetailModalBtn">&times;</button>
+            </div>
+
+            <div class="modal-card-body">
+                <!-- Customer Info Block -->
+                <div class="invoice-grid">
+                    <div class="invoice-box">
+                        <h4>Customer Delivery Information</h4>
+                        <p><strong>Name:</strong> <span id="modalCustomerName">-</span></p>
+                        <p><strong>Phone:</strong> <span id="modalCustomerPhone">-</span></p>
+                        <p><strong>Address:</strong> <span id="modalCustomerAddress">-</span></p>
+                        <p><strong>City & Pincode:</strong> <span id="modalCustomerCity">-</span></p>
+                        <p><strong>Special Notes:</strong> <span id="modalCustomerNotes">-</span></p>
+                    </div>
+
+                    <div class="invoice-box">
+                        <h4>Order Meta</h4>
+                        <p><strong>Placed On:</strong> <span id="modalOrderDate">-</span></p>
+                        <p><strong>Payment Mode:</strong> <span id="modalOrderPayment">-</span></p>
+                        <p><strong>Current Status:</strong> <span id="modalOrderStatusBadge" class="status-badge-pending">Pending</span></p>
+                    </div>
+                </div>
+
+                <!-- Items Breakdown -->
+                <h4 class="items-heading">Ordered Pet Supplies</h4>
+                <div class="modal-items-list" id="modalItemsList">
+                    <!-- Items table rows -->
+                </div>
+
+                <!-- Financial Totals -->
+                <div class="modal-totals-box">
+                    <div class="total-line">
+                        <span>Items Subtotal:</span>
+                        <strong id="modalSubtotal">₹0</strong>
+                    </div>
+                    <div class="total-line">
+                        <span>Delivery Fee:</span>
+                        <strong id="modalDelivery">₹0</strong>
+                    </div>
+                    <div class="total-line grand-total">
+                        <span>Grand Total:</span>
+                        <strong id="modalGrandTotal">₹0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-card-footer">
+                <button class="btn btn-secondary-admin" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Print Invoice
+                </button>
+                <button class="btn btn-primary-admin" id="closeInvoiceBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Script -->
+    <script src="admin.js"></script>
+</body>
+</html>
